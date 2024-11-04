@@ -18,9 +18,19 @@ function getTodayMessage() {
     const oneDay = 1000 * 60 * 60 * 24;
     const dayOfYear = Math.floor(diff / oneDay); // Día del año (0 a 365)
 
-    // Usar el día del año como índice para el mensaje, utilizando módulo para evitar errores
+    // Usar el día del año como índice para el mensaje
     return dailyMessages[dayOfYear % dailyMessages.length];
 }
 
-// Mostrar el mensaje del día
-document.getElementById("message").textContent = getTodayMessage();
+// Función para mostrar el mensaje al hacer clic en el botón
+function showDailyMessage() {
+    const message = document.getElementById("message");
+    message.textContent = getTodayMessage();
+    message.style.color = "#d81b60"; // Cambia el color del mensaje al mostrarse
+}
+
+// Añadir el evento al botón después de que la página ha cargado
+document.addEventListener("DOMContentLoaded", () => {
+    const button = document.getElementById("showMessageButton");
+    button.addEventListener("click", showDailyMessage);
+});
