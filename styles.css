@@ -33,6 +33,7 @@ body {
 
 h1 {
     color: #ad1457;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 button {
@@ -48,6 +49,11 @@ button {
 
 button:hover {
     background-color: #ad1457;
+}
+
+div{
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #message {
