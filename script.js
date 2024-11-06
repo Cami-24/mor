@@ -34,8 +34,8 @@ function loadDailyMessage() {
     if (lastMessageDate === today) {
         // Si ya se mostró el mensaje hoy, recuperarlo
         currentMessageIndex = parseInt(lastMessageIndex);
-        messageElement.textContent = messages[currentMessageIndex]; // Prepara el mensaje, pero lo mantiene oculto
-        messageElement.style.display = "none"; // Mantiene el mensaje oculto
+        messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️";
+        messageElement.style.display = "block"; // Mostrar el mensaje inicial
         showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
         resetButton.style.display = "block"; // Muestra el botón de reiniciar
     } else {
@@ -43,9 +43,8 @@ function loadDailyMessage() {
         currentMessageIndex = (lastMessageIndex !== null) ? parseInt(lastMessageIndex) + 1 : 0;
 
         if (currentMessageIndex < messages.length) {
-            // Mantener el mensaje oculto y mostrar el botón
-            messageElement.style.display = "none"; // Ocultar el mensaje inicialmente
             messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️"; // Mensaje inicial
+            messageElement.style.display = "block"; // Mostrar el mensaje inicial
             showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
             resetButton.style.display = "none"; // Oculta el botón de reiniciar
         } else {
@@ -72,7 +71,7 @@ showMessageButton.addEventListener("click", () => {
 resetButton.addEventListener("click", () => {
     currentMessageIndex = 0;
     messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️";
-    messageElement.style.display = "none"; // Mantiene el mensaje oculto
+    messageElement.style.display = "block"; // Muestra el mensaje inicial
     showMessageButton.style.display = "block"; // Muestra el botón para mostrar mensaje
     resetButton.style.display = "none"; // Oculta el botón de reiniciar
     localStorage.removeItem("lastMessageIndex");
