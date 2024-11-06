@@ -1,3 +1,4 @@
+
 // Mensajes diarios
 const messages = [
     "Eres la razón por la que sonrío cada día. 😊",
@@ -35,7 +36,7 @@ function loadDailyMessage() {
         currentMessageIndex = parseInt(lastMessageIndex);
         messageElement.textContent = messages[currentMessageIndex]; // Prepara el mensaje, pero lo mantiene oculto
         messageElement.style.display = "none"; // Mantiene el mensaje oculto
-        showMessageButton.style.display = "none"; // Oculta el botón para mostrar mensaje
+        showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
         resetButton.style.display = "block"; // Muestra el botón de reiniciar
     } else {
         // Si no hay mensaje para hoy, reinicia el índice
@@ -44,7 +45,8 @@ function loadDailyMessage() {
         if (currentMessageIndex < messages.length) {
             // Mantener el mensaje oculto y mostrar el botón
             messageElement.style.display = "none"; // Ocultar el mensaje inicialmente
-            showMessageButton.style.display = "block"; // Muestra el botón para mostrar el mensaje
+            messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️"; // Mensaje inicial
+            showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
             resetButton.style.display = "none"; // Oculta el botón de reiniciar
         } else {
             // No hay más mensajes, mostrar mensaje final
