@@ -71,7 +71,7 @@ div {
     background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
-    margin: 20px auto; /* Centrado vertical y horizontal */
+    margin: 20px 0; /* Centrado vertical */
     font-size: 1.2em;
     color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -84,7 +84,7 @@ div {
     }
 
     .card {
-        width: 90%; /* Hace que el cuadro del mensaje se ajuste mejor */
+        width: 100%; /* Ajusta el cuadro de mensaje a 100% de ancho */
         padding: 20px; /* Reduce un poco el padding en pantallas pequeñas */
     }
 
