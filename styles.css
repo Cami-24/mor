@@ -9,7 +9,6 @@ body {
     background: radial-gradient(#fce4ec, #d81b60);
 }
 
-
 /* Ocultar el contenedor de mensajes diarios al inicio */
 .hidden {
     display: none;
@@ -33,11 +32,13 @@ body {
     max-width: 400px;
 }
 
+/* Títulos */
 h1 {
     color: #ad1457;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+/* Botones */
 button {
     margin-top: 20px;
     padding: 10px 20px;
@@ -47,19 +48,20 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s;
 }
 
 button:hover {
     background-color: #ad1457;
 }
 
-div{
+/* Estilo para el texto */
+div {
     font-size: large;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-
-
+/* Contenedor de mensaje */
 #message {
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -75,51 +77,39 @@ div{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-button {
-    background-color: #d81b60;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background 0.3s;
-}
-
-button:hover {
-    background-color: #d81b60;
-}
-
-@media (max-width: 600px) {
-    .container {
-        width: 100%;
-        padding: 10px;
-    }
-    
-    h1 {
-        font-size: 1.5em;
-    }
-}
-
-/* Para pantallas más grandes */
-@media (min-width: 601px) {
-    .container {
-        width: 70%;
-    }
-    
-    h1 {
-        font-size: 2em;
-    }
-}
-/* Para dispositivos móviles */
+/* Media Queries para dispositivos móviles y pantallas pequeñas */
 @media screen and (max-width: 600px) {
     body {
         padding: 10px; /* Reduce el padding en pantallas pequeñas */
     }
 
+    .card {
+        width: 90%; /* Hace que el cuadro del mensaje se ajuste mejor */
+        padding: 20px; /* Reduce un poco el padding en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 1.5em; /* Ajusta el tamaño del título */
+    }
+
     #message {
-        width: 90%; /* Hace que el cuadro sea un poco más pequeño */
+        width: 90%; /* Ajusta el cuadro del mensaje al 90% de la pantalla */
         padding: 15px; /* Reduce el padding dentro del cuadro */
+        font-size: 1em; /* Ajusta el tamaño del texto */
+    }
+
+    button {
+        width: 100%; /* Hace el botón más ancho en pantallas pequeñas */
     }
 }
 
+/* Para pantallas más grandes */
+@media (min-width: 601px) {
+    .card {
+        width: 70%; /* Ajusta el tamaño de la tarjeta en pantallas grandes */
+    }
+
+    h1 {
+        font-size: 2em; /* Aumenta el tamaño del título */
+    }
+}
