@@ -65,7 +65,7 @@ div {
 #message {
     word-wrap: break-word;
     overflow-wrap: break-word;
-    width: 80%;
+    width: 90%; /* Cambié para que el cuadro sea más pequeño y se vea centrado */
     max-width: 500px;
     text-align: center;
     background: rgba(255, 255, 255, 0.8);
@@ -75,6 +75,8 @@ div {
     font-size: 1.2em;
     color: #333;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-left: auto; /* Asegura que el elemento se centre horizontalmente */
+    margin-right: auto; /* Asegura que el elemento se centre horizontalmente */
 }
 
 /* Media Queries para dispositivos móviles y pantallas pequeñas */
