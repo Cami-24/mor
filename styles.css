@@ -1,5 +1,5 @@
 body {
-    
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -61,6 +61,11 @@ div{
 
 
 #message {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
     background: rgba(255, 255, 255, 0.8);
     padding: 20px;
     border-radius: 10px;
@@ -106,3 +111,15 @@ button:hover {
         font-size: 2em;
     }
 }
+/* Para dispositivos móviles */
+@media screen and (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    #message {
+        width: 90%; /* Hace que el cuadro sea un poco más pequeño */
+        padding: 15px; /* Reduce el padding dentro del cuadro */
+    }
+}
+
