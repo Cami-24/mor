@@ -74,7 +74,6 @@ showMessageButton.addEventListener("click", () => {
 // Evento para el botón de reiniciar
 resetButton.addEventListener("click", () => {
     localStorage.removeItem("lastMessageIndex"); // Elimina el índice del mensaje guardado
-    localStorage.removeItem("lastMessageDate"); // Elimina la fecha guardada
     messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️"; // Restablece el texto de introducción
     messageElement.style.display = "block"; // Muestra el texto de introducción
     showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
