@@ -39,7 +39,6 @@ startButton.addEventListener("click", () => {
     loadDailyMessage();
 });
 
-// Función para cargar el mensaje diario
 function loadDailyMessage() {
     const lastMessageIndex = localStorage.getItem("lastMessageIndex");
     const lastMessageDate = localStorage.getItem("lastMessageDate");
@@ -49,45 +48,35 @@ function loadDailyMessage() {
         // Si ya se mostró el mensaje hoy, recuperarlo
         currentMessageIndex = parseInt(lastMessageIndex);
         messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️";
-        messageElement.style.display = "block"; // Mostrar el mensaje inicial
-        showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
-        resetButton.style.display = "block"; // Muestra el botón de reiniciar
+        messageElement.style.display = "block"; // Mostrar el texto de introducción
+        showMessageButton.style.display = "block"; // Mostrar el botón para descubrir el mensaje
+        resetButton.style.display = "none"; // Ocultar el botón de reiniciar
     } else {
-        // Si no hay mensaje para hoy, reinicia el índice
-        currentMessageIndex = (lastMessageIndex !== null) ? parseInt(lastMessageIndex) + 1 : 0;
-
-        if (currentMessageIndex < messages.length) {
-            messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️"; // Mensaje inicial
-            messageElement.style.display = "block"; // Mostrar el mensaje inicial
-            showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
-            resetButton.style.display = "none"; // Oculta el botón de reiniciar
-        } else {
-            // No hay más mensajes, mostrar mensaje final
-            messageElement.textContent = "¡Ya has visto todos los mensajes! ❤️";
-            messageElement.style.display = "block"; // Mostrar el mensaje final
-            showMessageButton.style.display = "none"; // Oculta el botón
-            resetButton.style.display = "block"; // Muestra el botón de reiniciar
-        }
+        // Si no hay mensaje para hoy, preparar la pantalla de inicio
+        currentMessageIndex = (lastMessageIndex !== null) ? (parseInt(lastMessageIndex) + 1) % messages.length : 0;
+        messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️";
+        messageElement.style.display = "block"; // Mostrar el texto de introducción
+        showMessageButton.style.display = "block"; // Mostrar el botón
+        resetButton.style.display = "none"; // Ocultar el botón de reiniciar
     }
 }
 
 // Evento para el botón de "Descubre el mensaje"
 showMessageButton.addEventListener("click", () => {
-    messageElement.textContent = messages[currentMessageIndex]; // Muestra el mensaje
-    messageElement.style.display = "block"; // Muestra el mensaje
+    messageElement.textContent = messages[currentMessageIndex]; // Mostrar el mensaje
+    messageElement.style.display = "block"; // Mostrar el mensaje
     localStorage.setItem("lastMessageIndex", currentMessageIndex); // Guarda el índice del mensaje
     localStorage.setItem("lastMessageDate", new Date().toISOString().split('T')[0]); // Guarda la fecha
     showMessageButton.style.display = "none"; // Oculta el botón después de mostrar el mensaje
     resetButton.style.display = "block"; // Muestra el botón de reiniciar
 });
 
-// Evento para reiniciar y mostrar todos los mensajes
+// Evento para el botón de reiniciar
 resetButton.addEventListener("click", () => {
-    currentMessageIndex = 0;
-    messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️";
-    messageElement.style.display = "block"; // Muestra el mensaje inicial
-    showMessageButton.style.display = "block"; // Muestra el botón para mostrar mensaje
+    localStorage.removeItem("lastMessageIndex"); // Elimina el índice del mensaje guardado
+    localStorage.removeItem("lastMessageDate"); // Elimina la fecha guardada
+    messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️"; // Restablece el texto de introducción
+    messageElement.style.display = "block"; // Muestra el texto de introducción
+    showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
     resetButton.style.display = "none"; // Oculta el botón de reiniciar
-    localStorage.removeItem("lastMessageIndex");
-    localStorage.removeItem("lastMessageDate");
 });
