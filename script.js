@@ -1,7 +1,6 @@
 
 // Mensajes diarios
 const messages = [
-    
     "¡No te detengas! Cada pequeño paso que das es una prueba de tu valentía y tus ganas de triunfar. Estoy tan orgullosa de lo lejos que has llegado 💪",
     "Siempre estoy aquí para apoyarte, pase lo que pase. 🎁",
     "Recuerda que siempre puedes contar conmigo. ❤️",
@@ -73,9 +72,9 @@ showMessageButton.addEventListener("click", () => {
 
 // Evento para el botón de reiniciar
 resetButton.addEventListener("click", () => {
-    localStorage.removeItem("lastMessageIndex"); // Elimina el índice del mensaje guardado
-    messageElement.textContent = "Haz clic en el botón para descubrir un mensaje especial ❤️"; // Restablece el texto de introducción
-    messageElement.style.display = "block"; // Muestra el texto de introducción
-    showMessageButton.style.display = "block"; // Muestra el botón para descubrir el mensaje
-    resetButton.style.display = "none"; // Oculta el botón de reiniciar
+    localStorage.removeItem("lastMessageIndex");
+    localStorage.removeItem("lastMessageDate");
+
+    currentMessageIndex = 0; // Reinicia el índice a 0
+    loadDailyMessage(); // Vuelve a cargar el mensaje del día
 });
