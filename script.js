@@ -1,7 +1,7 @@
 
 // Mensajes diarios
 const messages = [
-    "El futuro te depara cosas asombrosas. Este es solo el comienzo de todo lo que vas a lograr. 😊",
+    
     "¡No te detengas! Cada pequeño paso que das es una prueba de tu valentía y tus ganas de triunfar. Estoy tan orgullosa de lo lejos que has llegado 💪",
     "Siempre estoy aquí para apoyarte, pase lo que pase. 🎁",
     "Recuerda que siempre puedes contar conmigo. ❤️",
